@@ -1,0 +1,27 @@
+﻿<Window x:Class="CustomRegistrations.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="1000">
+    <DockPanel Margin="3">
+        <TextBlock DockPanel.Dock="Top" FontSize="16">
+            <Run>Prism首先在注册的类型中查找合适的View与ViewModel的关联</Run>
+            <LineBreak/>
+            <Run>如果在注册的类型中未找到，才会使用命名转换</Run>
+            <LineBreak/>
+            <Run>共有四种类型的注册方法：</Run>
+            <LineBreak/>
+            <Run>ViewModelLocationProvider.Register(typeof(MainWindow).ToString(), typeof(CustomViewModel));</Run>
+            <LineBreak/>
+            <Run>ViewModelLocationProvider.Register(typeof(MainWindow).ToString(), () => Container.Resolve&lt;CustomViewModel&gt;());</Run>
+            <LineBreak/>
+            <Run>ViewModelLocationProvider.Register&lt;MainWindow&gt;(() => Container.Resolve&lt;CustomViewModel&gt;());</Run>
+            <LineBreak/>
+            <Run>ViewModelLocationProvider.Register&lt;MainWindow, CustomViewModel&gt;();</Run>
+        </TextBlock>
+        <Border BorderBrush="Orange" BorderThickness="2">
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        </Border>
+    </DockPanel>
+</Window>

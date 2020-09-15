@@ -1,0 +1,11 @@
+﻿<Window x:Class="ViewModelLocator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="600">
+    <DockPanel Margin="5">
+        <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top">使用默认的命名转换自动关联View与ViewModel, prism:ViewModelLocator.AutoWireViewModel="True"</TextBlock>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+    </DockPanel>
+</Window>

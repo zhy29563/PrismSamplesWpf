@@ -1,0 +1,16 @@
+﻿<Window x:Class="ActivationDeactivation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525.868">
+    <DockPanel LastChildFill="True">
+        <StackPanel xml:space="preserve" Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Center">
+            <Button Margin="3" Padding="5" Content="Activate   ViewA" Click="Button_Click"/>
+            <Button Margin="3" Padding="5" Content="Deactivate ViewA" Click="Button_Click_1"/>
+            <Button Margin="3" Padding="5" Content="Activate   ViewB" Click="Button_Click_2"/>
+            <Button Margin="3" Padding="5" Content="Deactivate ViewB" Click="Button_Click_3"/>
+        </StackPanel>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </DockPanel>
+</Window>
